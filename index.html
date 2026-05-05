@@ -2,13 +2,14 @@
 <html>
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <base target="_top" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-
+    <!-- SweetAlert2 buat notif sukses -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
     <link rel="stylesheet" href="style.css" />
@@ -16,10 +17,10 @@
   <body class="hero-bg min-h-screen !no-scrollbar">
     <div id="navbar-placeholder"></div>
 
-    <main class="max-w-7xl mx-auto px-10 py-16 lg:py-0">
+    <main class="max-w-7xl mx-auto px-6 lg:px-10 py-10 lg:py-0">
       <!-- HERO SECTION CENTERED -->
       <div
-        class="grid grid-cols-1 gap-8 items-center rounded-none p-10 lg:p-32 relative overflow-hidden shadow-none border-none w-screen relative left-[50%] -ml-[50vw] right-[50%] -mr-[50vw]"
+        class="grid grid-cols-1 gap-8 items-center rounded-none p-6 md:p-10 lg:p-32 relative overflow-hidden shadow-none border-none w-screen relative left-[50%] -ml-[50vw] right-[50%] -mr-[50vw]"
         style="
           background-image: url(&quot;hero_image.webp&quot;);
           background-size: cover;
@@ -28,70 +29,60 @@
         "
       >
         <!-- Overlay Gelap -->
-        <div class="absolute inset-0 bg-black/50 z-0"></div>
+        <div class="absolute inset-0 bg-black/60 z-0"></div>
 
-        <!-- Teks Hero Center (Tanpa Ikon/Logo) -->
-        <div class="relative z-10 text-center space-y-10 max-w-4xl mx-auto">
-          <div class="space-y-6">
+        <!-- Teks Hero Center -->
+        <div class="relative z-10 text-center space-y-6 md:space-y-10 max-w-4xl mx-auto py-12 md:py-0">
+          <div class="space-y-4 md:space-y-6">
             <h1
-              class="text-6xl lg:text-7xl font-extrabold text-[#FFD700] leading-[1.1] tracking-tight reveal-top"
+              class="text-4xl md:text-5xl lg:text-7xl font-extrabold text-[#FFD700] leading-[1.1] tracking-tight reveal-top"
             >
-              Butuh antar jemput <br />
+              Butuh antar jemput <br class="hidden md:block" />
               atau titip barang?
             </h1>
             <p
-              class="text-2xl lg:text-3xl font-extrabold text-white reveal-top delay-100"
+              class="text-xl md:text-2xl lg:text-3xl font-extrabold text-white reveal-top delay-100"
             >
               Semua ada di sini!
             </p>
             <p
-              class="text-gray-200 text-lg lg:text-xl leading-relaxed font-medium reveal-top delay-200 mx-auto"
+              class="text-gray-200 text-base md:text-lg lg:text-xl leading-relaxed font-medium reveal-top delay-200 mx-auto px-4"
             >
               Layanan cepat, aman, dan terpercaya untuk kamu yang sat-set.
-          </p>
+            </p>
           </div>
 
           <!-- Fitur Kecil Center -->
           <div
-            class="flex flex-wrap items-center justify-center gap-x-12 gap-y-6 pt-4 reveal-top delay-300"
+            class="flex flex-col md:flex-row flex-wrap items-center justify-center gap-4 md:gap-x-12 pt-4 reveal-top delay-300"
           >
             <div class="flex items-center gap-3">
-              <div
-                class="flex items-center justify-center w-8 h-8 bg-[#FFD700] rounded-full shadow-lg shadow-yellow-500/20"
-              >
+              <div class="flex items-center justify-center w-8 h-8 bg-[#FFD700] rounded-full shadow-lg shadow-yellow-500/20">
                 <i class="fa-solid fa-shield-halved text-xs text-black"></i>
               </div>
-              <span class="text-md font-bold text-white"
-                >Aman & Terpercaya</span
-              >
+              <span class="text-sm md:text-md font-bold text-white">Aman & Terpercaya</span>
             </div>
 
             <div class="flex items-center gap-3">
-              <div
-                class="flex items-center justify-center w-8 h-8 bg-[#FFD700] rounded-full shadow-lg shadow-yellow-500/20"
-              >
+              <div class="flex items-center justify-center w-8 h-8 bg-[#FFD700] rounded-full shadow-lg shadow-yellow-500/20">
                 <i class="fa-solid fa-clock text-xs text-black"></i>
               </div>
-              <span class="text-md font-bold text-white"
-                >Cepat & Tepat Waktu</span
-              >
+              <span class="text-sm md:text-md font-bold text-white">Cepat & Tepat Waktu</span>
             </div>
 
             <div class="flex items-center gap-3">
-              <div
-                class="flex items-center justify-center w-8 h-8 bg-[#FFD700] rounded-full shadow-lg shadow-yellow-500/20"
-              >
+              <div class="flex items-center justify-center w-8 h-8 bg-[#FFD700] rounded-full shadow-lg shadow-yellow-500/20">
                 <i class="fa-solid fa-star text-xs text-black"></i>
               </div>
-              <span class="text-md font-bold text-white">Harga Terjangkau</span>
+              <span class="text-sm md:text-md font-bold text-white">Harga Terjangkau</span>
             </div>
           </div>
 
           <!-- Tombol CTA Cepat -->
-          <div class="pt-8 reveal-top delay-400">
+          <div class="pt-6 md:pt-8 reveal-top delay-400">
             <a
               href="#anjem"
-              class="inline-block px-10 py-4 bg-[#FFD700] text-black rounded-2xl font-black text-lg hover:bg-yellow-500 shadow-xl transition-all active:scale-95"
+              class="inline-block w-full md:w-auto px-8 md:px-10 py-4 bg-[#FFD700] text-black rounded-2xl font-black text-sm md:text-lg hover:bg-yellow-500 shadow-xl transition-all active:scale-95"
             >
               MULAI PESAN SEKARANG
             </a>
@@ -100,238 +91,129 @@
       </div>
 
       <!-- Section Anjem -->
-      <section id="anjem" class="py-24 bg-slate-50 relative overflow-hidden">
-        <!-- Elemen Dekoratif Latar (Biar Megah) -->
-        <div
-          class="absolute top-0 left-0 w-64 h-64 bg-[#FFD700]/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"
-        ></div>
-        <div
-          class="absolute bottom-0 right-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl translate-x-1/3 translate-y-1/3"
-        ></div>
+      <section id="anjem" class="py-16 md:py-24 bg-slate-50 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-64 h-64 bg-[#FFD700]/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl translate-x-1/3 translate-y-1/3"></div>
 
-        <div class="max-w-7xl mx-auto px-6 lg:px-10 relative z-10">
+        <div class="max-w-7xl mx-auto px-0 md:px-6 lg:px-10 relative z-10">
           <!-- Header Section -->
-          <div class="mb-16 text-center lg:text-left reveal-top">
-            <div
-              class="inline-block px-4 py-1.5 mb-4 rounded-full bg-[#FFD700]/10 border border-[#FFD700]/20"
-            >
-              <span
-                class="text-xs font-black uppercase tracking-widest text-slate-700"
-                >Premium Service</span
-              >
+          <div class="mb-10 md:mb-16 text-center lg:text-left reveal-top px-6 md:px-0">
+            <div class="inline-block px-4 py-1.5 mb-4 rounded-full bg-[#FFD700]/10 border border-[#FFD700]/20">
+              <span class="text-xs font-black uppercase tracking-widest text-slate-700">Premium Service</span>
             </div>
-            <h2 class="text-5xl font-black text-slate-900 mb-4 tracking-tight">
+            <h2 class="text-3xl md:text-5xl font-black text-slate-900 mb-4 tracking-tight">
               Anjem
-              <span
-                class="text-transparent bg-clip-text bg-gradient-to-r from-[#FFD700] to-yellow-600"
-                >Exclusive</span
-              >
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#FFD700] to-yellow-600">Exclusive</span>
             </h2>
-            <p class="text-gray-500 font-medium text-lg max-w-2xl">
-              Nikmati perjalanan aman dan nyaman dengan driver profesional kami.
-              Sat-set sampai tujuan tanpa ribet.
+            <p class="text-gray-500 font-medium text-sm md:text-lg max-w-2xl mx-auto lg:mx-0">
+              Nikmati perjalanan aman dan nyaman dengan driver profesional kami. Sat-set sampai tujuan tanpa ribet.
             </p>
           </div>
 
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-start">
             <!-- Sisi Kiri: Visual & Info Harga -->
-            <div class="lg:col-span-5 space-y-8 reveal-left">
-              <!-- Card Motor Megah -->
+            <div class="lg:col-span-5 space-y-6 md:space-y-8 reveal-left px-6 md:px-0">
+              <!-- Card Motor -->
               <div class="relative group">
-                <div
-                  class="absolute -inset-1 bg-gradient-to-r from-[#FFD700] to-yellow-500 rounded-[3rem] blur opacity-25 group-hover:opacity-50 transition duration-1000"
-                ></div>
-                <div
-                  class="relative bg-slate-900 rounded-[2.5rem] p-12 flex flex-col items-center justify-center overflow-hidden h-[450px] shadow-2xl"
-                >
-                  <div
-                    class="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"
-                  ></div>
+                <div class="absolute -inset-1 bg-gradient-to-r from-[#FFD700] to-yellow-500 rounded-[2rem] md:rounded-[3rem] blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+                <div class="relative bg-slate-900 rounded-[2rem] md:rounded-[2.5rem] p-8 md:p-12 flex flex-col items-center justify-center overflow-hidden h-[300px] md:h-[450px] shadow-2xl">
+                  <div class="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
                   <div class="relative z-10 text-center">
-                    <div class="relative mb-8">
-                      <div
-                        class="absolute inset-0 bg-[#FFD700] rounded-full blur-3xl opacity-20 animate-pulse"
-                      ></div>
-                      <i
-                        class="fa-solid fa-motorcycle text-[140px] text-[#FFD700] drop-shadow-[0_10px_30px_rgba(255,215,0,0.5)]"
-                      ></i>
+                    <div class="relative mb-6 md:mb-8">
+                      <div class="absolute inset-0 bg-[#FFD700] rounded-full blur-3xl opacity-20 animate-pulse"></div>
+                      <i class="fa-solid fa-motorcycle text-[100px] md:text-[140px] text-[#FFD700] drop-shadow-[0_10px_30px_rgba(255,215,0,0.5)]"></i>
                     </div>
-                    <div
-                      class="bg-white/10 backdrop-blur-md px-6 py-3 rounded-2xl border border-white/20 inline-flex items-center gap-3"
-                    >
-                      <div
-                        class="w-3 h-3 bg-green-500 rounded-full animate-ping"
-                      ></div>
-                      <span
-                        class="text-sm font-black text-white uppercase tracking-tighter"
-                        >System Online & Driver Ready</span
-                      >
+                    <div class="bg-white/10 backdrop-blur-md px-4 md:px-6 py-2.5 md:py-3 rounded-2xl border border-white/20 inline-flex items-center gap-3">
+                      <div class="w-2 md:w-3 h-2 md:h-3 bg-green-500 rounded-full animate-ping"></div>
+                      <span class="text-xs md:text-sm font-black text-white uppercase tracking-tighter">System Online</span>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <!-- Card Estimasi Harga Elegan -->
-              <div
-                class="bg-white rounded-[2rem] p-8 border border-slate-100 shadow-[0_20px_50px_rgba(0,0,0,0.04)] flex items-center justify-between"
-              >
+              <!-- Card Estimasi Harga -->
+              <div class="bg-white rounded-[1.5rem] md:rounded-[2rem] p-6 md:p-8 border border-slate-100 shadow-[0_20px_50px_rgba(0,0,0,0.04)] flex items-center justify-between">
                 <div>
-                  <p
-                    class="text-slate-400 font-bold text-xs uppercase tracking-widest mb-1"
-                  >
-                    Estimasi Biaya
-                  </p>
+                  <p class="text-slate-400 font-bold text-[10px] md:text-xs uppercase tracking-widest mb-1">Estimasi Biaya</p>
                   <div class="flex items-baseline gap-2">
-                    <span class="text-3xl font-black text-slate-900"
-                      >Rp 10k</span
-                    >
+                    <span class="text-xl md:text-3xl font-black text-slate-900">Rp 10k</span>
                     <span class="text-slate-400 font-bold">-</span>
-                    <span class="text-3xl font-black text-[#FFD700]">25k</span>
+                    <span class="text-xl md:text-3xl font-black text-[#FFD700]">25k</span>
                   </div>
                 </div>
-                <div class="h-12 w-[1px] bg-slate-100"></div>
+                <div class="h-10 md:h-12 w-[1px] bg-slate-100"></div>
                 <div class="text-right">
-                  <i
-                    class="fa-solid fa-circle-info text-slate-300 text-xl hover:text-[#FFD700] transition-colors cursor-help"
-                  ></i>
+                  <i class="fa-solid fa-circle-info text-slate-300 text-lg md:text-xl hover:text-[#FFD700] transition-colors cursor-help"></i>
                 </div>
               </div>
             </div>
 
-            <!-- Sisi Kanan: Form Pemesanan Mewah -->
-            <div class="lg:col-span-7 reveal-right">
-              <div
-                class="bg-white rounded-[3rem] p-10 lg:p-14 shadow-[0_30px_100px_rgba(0,0,0,0.06)] border border-slate-50 relative"
-              >
-                <form class="space-y-8">
-                  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Sisi Kanan: Form Pemesanan -->
+            <div class="lg:col-span-7 reveal-right px-4 md:px-0">
+              <div class="bg-white rounded-[2rem] md:rounded-[3rem] p-6 md:p-10 lg:p-14 shadow-[0_30px_100px_rgba(0,0,0,0.06)] border border-slate-50 relative">
+                <form class="space-y-6 md:space-y-8">
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                     <!-- Lokasi Jemput -->
-                    <div class="space-y-3">
-                      <label
-                        class="text-xs font-black text-slate-400 uppercase tracking-widest ml-1"
-                        >Titik Penjemputan</label
-                      >
+                    <div class="space-y-2 md:space-y-3">
+                      <label class="text-[10px] md:text-xs font-black text-slate-400 uppercase tracking-widest ml-1">Titik Penjemputan</label>
                       <div class="relative group">
-                        <input
-                          type="text"
-                          id="lokasi_jemput"
-                          placeholder="Cari lokasi..."
-                          class="w-full pl-14 pr-6 py-5 bg-slate-50 border-2 border-transparent rounded-[1.5rem] focus:bg-white focus:border-[#FFD700] focus:ring-4 focus:ring-[#FFD700]/10 outline-none transition-all font-bold text-slate-700 placeholder:text-slate-300"
-                        />
-                        <div
-                          class="absolute left-5 top-1/2 -translate-y-1/2 w-7 h-7 bg-green-500 rounded-lg flex items-center justify-center shadow-lg shadow-green-200"
-                        >
-                          <i
-                            class="fa-solid fa-location-dot text-white text-[10px]"
-                          ></i>
+                        <input type="text" id="lokasi_jemput" placeholder="Cari lokasi..." class="w-full pl-12 md:pl-14 pr-4 md:pr-6 py-4 md:py-5 bg-slate-50 border-2 border-transparent rounded-2xl md:rounded-[1.5rem] focus:bg-white focus:border-[#FFD700] focus:ring-4 focus:ring-[#FFD700]/10 outline-none transition-all font-bold text-sm md:text-base text-slate-700 placeholder:text-slate-300" />
+                        <div class="absolute left-4 md:left-5 top-1/2 -translate-y-1/2 w-6 md:w-7 h-6 md:h-7 bg-green-500 rounded-lg flex items-center justify-center shadow-lg shadow-green-200">
+                          <i class="fa-solid fa-location-dot text-white text-[10px]"></i>
                         </div>
                       </div>
                     </div>
 
                     <!-- Lokasi Tujuan -->
-                    <div class="space-y-3">
-                      <label
-                        class="text-xs font-black text-slate-400 uppercase tracking-widest ml-1"
-                        >Tujuan Akhir</label
-                      >
+                    <div class="space-y-2 md:space-y-3">
+                      <label class="text-[10px] md:text-xs font-black text-slate-400 uppercase tracking-widest ml-1">Tujuan Akhir</label>
                       <div class="relative group">
-                        <input
-                          type="text"
-                          id="lokasi_tujuan"
-                          placeholder="Ke mana kita pergi?"
-                          class="w-full pl-14 pr-6 py-5 bg-slate-50 border-2 border-transparent rounded-[1.5rem] focus:bg-white focus:border-[#FFD700] focus:ring-4 focus:ring-[#FFD700]/10 outline-none transition-all font-bold text-slate-700 placeholder:text-slate-300"
-                        />
-                        <div
-                          class="absolute left-5 top-1/2 -translate-y-1/2 w-7 h-7 bg-red-500 rounded-lg flex items-center justify-center shadow-lg shadow-red-200"
-                        >
-                          <i
-                            class="fa-solid fa-flag-checkered text-white text-[10px]"
-                          ></i>
+                        <input type="text" id="lokasi_tujuan" placeholder="Ke mana kita pergi?" class="w-full pl-12 md:pl-14 pr-4 md:pr-6 py-4 md:py-5 bg-slate-50 border-2 border-transparent rounded-2xl md:rounded-[1.5rem] focus:bg-white focus:border-[#FFD700] focus:ring-4 focus:ring-[#FFD700]/10 outline-none transition-all font-bold text-sm md:text-base text-slate-700 placeholder:text-slate-300" />
+                        <div class="absolute left-4 md:left-5 top-1/2 -translate-y-1/2 w-6 md:w-7 h-6 md:h-7 bg-red-500 rounded-lg flex items-center justify-center shadow-lg shadow-red-200">
+                          <i class="fa-solid fa-flag-checkered text-white text-[10px]"></i>
                         </div>
                       </div>
                     </div>
                   </div>
 
-                  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                     <!-- Tanggal Waktu -->
-                    <div class="space-y-3">
-                      <label
-                        class="text-xs font-black text-slate-400 uppercase tracking-widest ml-1"
-                        >Waktu Keberangkatan</label
-                      >
-                      <input
-                        type="datetime-local"
-                        id="tanggal_waktu"
-                        class="w-full px-6 py-5 bg-slate-50 border-2 border-transparent rounded-[1.5rem] focus:bg-white focus:border-[#FFD700] outline-none transition-all font-bold text-slate-700"
-                      />
+                    <div class="space-y-2 md:space-y-3">
+                      <label class="text-[10px] md:text-xs font-black text-slate-400 uppercase tracking-widest ml-1">Waktu</label>
+                      <input type="datetime-local" id="tanggal_waktu" class="w-full px-5 md:px-6 py-4 md:py-5 bg-slate-50 border-2 border-transparent rounded-2xl md:rounded-[1.5rem] focus:bg-white focus:border-[#FFD700] outline-none transition-all font-bold text-sm md:text-base text-slate-700" />
                     </div>
 
                     <!-- Pilih Driver -->
-                    <div class="space-y-3">
-                      <label
-                        class="text-xs font-black text-slate-400 uppercase tracking-widest ml-1"
-                        >Driver Pilihan</label
-                      >
+                    <div class="space-y-2 md:space-y-3">
+                      <label class="text-[10px] md:text-xs font-black text-slate-400 uppercase tracking-widest ml-1">Driver Pilihan</label>
                       <div class="relative">
-                        <select
-                          id="pilihan_driver"
-                          class="w-full px-6 py-5 bg-slate-50 border-2 border-transparent rounded-[1.5rem] focus:bg-white focus:border-[#FFD700] outline-none transition-all font-bold text-slate-700 appearance-none cursor-pointer"
-                        >
-                          <option value="" disabled selected>
-                            Pilih Driver Favorit
-                          </option>
-                          <option value="Adel">Adel (Perempuan)</option>
-                          <option value="Awan">Awan (Laki-laki)</option>
-                          <option value="Adella">Adella (Perempuan)</option>
-                          <option value="Sholeh">Sholeh (Laki-laki)</option>
-                          <option value="Cava">Cava (Perempuan)</option>
+                        <select id="pilihan_driver" class="w-full px-5 md:px-6 py-4 md:py-5 bg-slate-50 border-2 border-transparent rounded-2xl md:rounded-[1.5rem] focus:bg-white focus:border-[#FFD700] outline-none transition-all font-bold text-sm md:text-base text-slate-700 appearance-none cursor-pointer">
+                          <option value="" disabled selected>Pilih Driver</option>
+                          <option value="Adel">Adel (P)</option>
+                          <option value="Awan">Awan (L)</option>
+                          <option value="Adella">Adella (P)</option>
+                          <option value="Sholeh">Sholeh (L)</option>
+                          <option value="Cava">Cava (P)</option>
                         </select>
-                        <i
-                          class="fa-solid fa-chevron-down absolute right-6 top-1/2 -translate-y-1/2 text-slate-300"
-                        ></i>
+                        <i class="fa-solid fa-chevron-down absolute right-5 md:right-6 top-1/2 -translate-y-1/2 text-slate-300"></i>
                       </div>
                     </div>
                   </div>
 
-                  <!-- CATATAN TAMBAHAN (Sori tadi kelupaan, ini udah mendarat!) -->
-                  <div class="space-y-3">
-                    <label
-                      class="text-xs font-black text-slate-400 uppercase tracking-widest ml-1"
-                      >Catatan Tambahan (Instruksi Driver)</label
-                    >
+                  <!-- Catatan -->
+                  <div class="space-y-2 md:space-y-3">
+                    <label class="text-[10px] md:text-xs font-black text-slate-400 uppercase tracking-widest ml-1">Catatan Tambahan</label>
                     <div class="relative">
-                      <textarea
-                        id="catatan_anjem"
-                        placeholder="Contoh: Titip helm dua ya kak, atau tunggu di depan gerbang..."
-                        rows="3"
-                        class="w-full px-6 py-5 bg-slate-50 border-2 border-transparent rounded-[1.5rem] focus:bg-white focus:border-[#FFD700] outline-none transition-all font-bold text-slate-700 placeholder:text-slate-300 resize-none"
-                      ></textarea>
-                      <div class="absolute right-5 bottom-5">
-                        <i
-                          class="fa-solid fa-pen-nib text-[#FFD700]/30 text-xl"
-                        ></i>
-                      </div>
+                      <textarea id="catatan_anjem" placeholder="Contoh: Titip helm dua ya kak..." rows="3" class="w-full px-5 md:px-6 py-4 md:py-5 bg-slate-50 border-2 border-transparent rounded-2xl md:rounded-[1.5rem] focus:bg-white focus:border-[#FFD700] outline-none transition-all font-bold text-sm md:text-base text-slate-700 placeholder:text-slate-300 resize-none"></textarea>
                     </div>
                   </div>
 
-                  <!-- Button Submit Mewah -->
-                  <button
-                    type="button"
-                    onclick="kirimPesanAnjemWA()"
-                    class="group relative w-full overflow-hidden rounded-[1.5rem] bg-slate-900 p-px font-black text-white shadow-2xl transition-all hover:scale-[1.01] active:scale-[0.98]"
-                  >
-                    <div
-                      class="absolute inset-0 bg-gradient-to-r from-[#FFD700] to-yellow-500 opacity-0 group-hover:opacity-100 transition-opacity"
-                    ></div>
-                    <div
-                      class="relative flex items-center justify-center gap-3 bg-slate-900 px-8 py-6 rounded-[1.5rem] group-hover:bg-transparent transition-colors"
-                    >
-                      <span class="text-xl tracking-tighter uppercase"
-                        >Konfirmasi & Hubungi Driver</span
-                      >
-                      <i
-                        class="fa-solid fa-arrow-right-long text-[#FFD700] group-hover:text-black transition-colors"
-                      ></i>
+                  <!-- Submit Button -->
+                  <button type="button" onclick="kirimPesanAnjemWA()" class="group relative w-full overflow-hidden rounded-2xl md:rounded-[1.5rem] bg-slate-900 p-px font-black text-white shadow-2xl transition-all hover:scale-[1.01] active:scale-[0.98]">
+                    <div class="absolute inset-0 bg-gradient-to-r from-[#FFD700] to-yellow-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="relative flex items-center justify-center gap-3 bg-slate-900 px-6 md:px-8 py-4 md:py-6 rounded-2xl md:rounded-[1.5rem] group-hover:bg-transparent transition-colors">
+                      <span class="text-sm md:text-lg tracking-tighter uppercase">Hubungi Driver</span>
+                      <i class="fa-solid fa-arrow-right-long text-[#FFD700] group-hover:text-black transition-colors"></i>
                     </div>
                   </button>
                 </form>
@@ -340,257 +222,220 @@
           </div>
         </div>
       </section>
-      <!-- jastip section -->
-<section id="jastip" class="py-24 bg-white relative overflow-hidden">
-  <!-- Elemen Dekoratif (Biar kesan belanja mewah) -->
-  <div class="absolute top-0 right-0 w-80 h-80 bg-orange-100/30 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3"></div>
-  <div class="absolute bottom-0 left-0 w-64 h-64 bg-yellow-100/20 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2"></div>
 
-  <div class="max-w-7xl mx-auto px-6 lg:px-10 relative z-10">
-    <!-- Header Section -->
-    <div class="mb-16 reveal-top flex flex-col md:flex-row md:items-end justify-between gap-6">
-      <div class="space-y-4">
-        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-50 border border-orange-100">
-          <i class="fa-solid fa-bag-shopping text-orange-500 text-xs"></i>
-          <span class="text-xs font-black uppercase tracking-widest text-orange-600">Personal Shopper</span>
-        </div>
-        <h2 class="text-5xl font-black text-slate-900 tracking-tight">
-          Jastip <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-yellow-600">Premium</span>
-        </h2>
-        <p class="text-gray-500 font-medium text-lg max-w-xl">
-          Mau barang apa? Dari toko mana? Tinggal sebut, driver kami yang antre dan carikan buat kamu.
-        </p>
-      </div>
-    </div>
+      <!-- Jastip Section -->
+      <section id="jastip" class="py-16 md:py-24 bg-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-80 h-80 bg-orange-100/30 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3"></div>
+        <div class="absolute bottom-0 left-0 w-64 h-64 bg-yellow-100/20 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2"></div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-      <!-- Sisi Kiri: Visual & Upload -->
-      <div class="lg:col-span-5 space-y-8 reveal-left">
-        <!-- Visual Card Jastip -->
-        <div class="relative group">
-          <div class="absolute -inset-1 bg-gradient-to-r from-orange-400 to-yellow-500 rounded-[3rem] blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
-          <div class="relative bg-gradient-to-br from-orange-500 to-orange-600 rounded-[2.5rem] p-12 h-[400px] flex flex-col items-center justify-center overflow-hidden shadow-2xl">
-            <!-- Icon Background Pattern -->
-            <i class="fa-solid fa-cart-flatbed-suitcases text-[250px] text-white/10 absolute -bottom-10 -left-10 rotate-12"></i>
-            
-            <div class="relative z-10 text-center">
-              <div class="relative inline-block mb-6">
-                <i class="fa-solid fa-mobile-screen-button text-[180px] text-slate-900/20"></i>
-                <i class="fa-solid fa-cart-shopping absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-7xl text-white drop-shadow-[0_15px_30px_rgba(0,0,0,0.2)]"></i>
+        <div class="max-w-7xl mx-auto px-0 md:px-6 lg:px-10 relative z-10">
+          <div class="mb-10 md:mb-16 reveal-top flex flex-col items-center md:items-start text-center md:text-left px-6 md:px-0">
+            <div class="space-y-3 md:space-y-4">
+              <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-50 border border-orange-100">
+                <i class="fa-solid fa-bag-shopping text-orange-500 text-[10px] md:text-xs"></i>
+                <span class="text-[10px] md:text-xs font-black uppercase tracking-widest text-orange-600">Personal Shopper</span>
               </div>
-              <p class="text-white font-black text-xl tracking-tight uppercase">Belanja Real-Time</p>
+              <h2 class="text-3xl md:text-5xl font-black text-slate-900 tracking-tight">
+                Jastip <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-yellow-600">Premium</span>
+              </h2>
+              <p class="text-gray-500 font-medium text-sm md:text-lg max-w-xl mx-auto md:mx-0">
+                Mau barang apa? Dari mana? Tinggal sebut, driver kami carikan buat kamu.
+              </p>
             </div>
           </div>
-        </div>
-      </div>
 
-      <!-- Sisi Kanan: Form Jastip Mewah -->
-      <div class="lg:col-span-7 reveal-right">
-        <div class="bg-white rounded-[3rem] p-10 lg:p-14 shadow-[0_30px_100px_rgba(0,0,0,0.06)] border border-slate-50">
-          <form class="space-y-7">
-            <!-- Nama Barang -->
-            <div class="space-y-3">
-              <label class="text-xs font-black text-slate-400 uppercase tracking-widest ml-1">Apa yang mau dibeli?</label>
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-start">
+            <!-- Sisi Kiri: Visual -->
+            <div class="lg:col-span-5 space-y-8 reveal-left px-6 md:px-0">
               <div class="relative group">
-                <input type="text" id="nama_barang" placeholder="Contoh: Seblak Preanger Level 10..." class="w-full pl-14 pr-6 py-5 bg-slate-50 border-2 border-transparent rounded-2xl focus:bg-white focus:border-orange-500 focus:ring-4 focus:ring-orange-500/10 outline-none transition-all font-bold text-slate-700" />
-                <div class="absolute left-5 top-1/2 -translate-y-1/2 text-orange-500 text-xl">
-                  <i class="fa-solid fa-tag"></i>
-                </div>
-              </div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <!-- Toko -->
-              <div class="space-y-3">
-                <label class="text-xs font-black text-slate-400 uppercase tracking-widest ml-1">Beli di Mana?</label>
-                <div class="relative">
-                  <input type="text" id="toko_barang" placeholder="Nama toko/lokasi..." class="w-full pl-14 pr-6 py-5 bg-slate-50 border-2 border-transparent rounded-2xl focus:bg-white focus:border-orange-500 outline-none transition-all font-bold text-slate-700" />
-                  <div class="absolute left-5 top-1/2 -translate-y-1/2 text-slate-300">
-                    <i class="fa-solid fa-store"></i>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Jumlah -->
-              <div class="space-y-3">
-                <label class="text-xs font-black text-slate-400 uppercase tracking-widest ml-1">Berapa Banyak?</label>
-                <div class="relative">
-                  <input type="text" id="jumlah_barang" placeholder="Contoh: 2 porsi / 1 box..." class="w-full pl-14 pr-6 py-5 bg-slate-50 border-2 border-transparent rounded-2xl focus:bg-white focus:border-orange-500 outline-none transition-all font-bold text-slate-700" />
-                  <div class="absolute left-5 top-1/2 -translate-y-1/2 text-slate-300">
-                    <i class="fa-solid fa-list-check"></i>
+                <div class="absolute -inset-1 bg-gradient-to-r from-orange-400 to-yellow-500 rounded-[2rem] md:rounded-[3rem] blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
+                <div class="relative bg-gradient-to-br from-orange-500 to-orange-600 rounded-[2rem] md:rounded-[2.5rem] p-8 md:p-12 h-[300px] md:h-[400px] flex flex-col items-center justify-center overflow-hidden shadow-2xl">
+                  <i class="fa-solid fa-cart-flatbed-suitcases text-[150px] md:text-[250px] text-white/10 absolute -bottom-10 -left-10 rotate-12"></i>
+                  <div class="relative z-10 text-center">
+                    <div class="relative inline-block mb-4 md:mb-6">
+                      <i class="fa-solid fa-mobile-screen-button text-[120px] md:text-[180px] text-slate-900/20"></i>
+                      <i class="fa-solid fa-cart-shopping absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-5xl md:text-7xl text-white drop-shadow-[0_15px_30px_rgba(0,0,0,0.2)]"></i>
+                    </div>
+                    <p class="text-white font-black text-base md:text-xl tracking-tight uppercase">Belanja Real-Time</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- Wrapper Grid untuk Fee & Pilih Driver biar sebelahan -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <!-- Budget / Fee -->
-              <div class="space-y-3">
-                <label class="text-xs font-black text-slate-400 uppercase tracking-widest ml-1">Fee</label>
-                <div class="relative">
-                  <input type="text" id="budget_barang" placeholder="Contoh: 50.000" class="w-full pl-14 pr-6 py-5 bg-slate-50 border-2 border-transparent rounded-2xl focus:bg-white focus:border-orange-500 outline-none transition-all font-bold text-slate-700" />
-                  <div class="absolute left-5 top-1/2 -translate-y-1/2 text-orange-500 font-bold">Rp</div>
-                </div>
+            <!-- Sisi Kanan: Form Jastip -->
+            <div class="lg:col-span-7 reveal-right px-4 md:px-0">
+              <div class="bg-white rounded-[2rem] md:rounded-[3rem] p-6 md:p-10 lg:p-14 shadow-[0_30px_100px_rgba(0,0,0,0.06)] border border-slate-50">
+                <form class="space-y-6 md:space-y-7">
+                  <div class="space-y-2 md:space-y-3">
+                    <label class="text-[10px] md:text-xs font-black text-slate-400 uppercase tracking-widest ml-1">Apa yang mau dibeli?</label>
+                    <div class="relative group">
+                      <input type="text" id="nama_barang" placeholder="Contoh: Seblak..." class="w-full pl-12 md:pl-14 pr-4 md:pr-6 py-4 md:py-5 bg-slate-50 border-2 border-transparent rounded-2xl focus:bg-white focus:border-orange-500 focus:ring-4 focus:ring-orange-500/10 outline-none transition-all font-bold text-sm md:text-base text-slate-700" />
+                      <div class="absolute left-4 md:left-5 top-1/2 -translate-y-1/2 text-orange-500 text-lg md:text-xl">
+                        <i class="fa-solid fa-tag"></i>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
+                    <div class="space-y-2 md:space-y-3">
+                      <label class="text-[10px] md:text-xs font-black text-slate-400 uppercase tracking-widest ml-1">Beli di Mana?</label>
+                      <div class="relative">
+                        <input type="text" id="toko_barang" placeholder="Nama toko..." class="w-full pl-12 md:pl-14 pr-4 md:pr-6 py-4 md:py-5 bg-slate-50 border-2 border-transparent rounded-2xl focus:bg-white focus:border-orange-500 outline-none transition-all font-bold text-sm md:text-base text-slate-700" />
+                        <div class="absolute left-4 md:left-5 top-1/2 -translate-y-1/2 text-slate-300">
+                          <i class="fa-solid fa-store"></i>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="space-y-2 md:space-y-3">
+                      <label class="text-[10px] md:text-xs font-black text-slate-400 uppercase tracking-widest ml-1">Berapa Banyak?</label>
+                      <div class="relative">
+                        <input type="text" id="jumlah_barang" placeholder="Contoh: 2 porsi..." class="w-full pl-12 md:pl-14 pr-4 md:pr-6 py-4 md:py-5 bg-slate-50 border-2 border-transparent rounded-2xl focus:bg-white focus:border-orange-500 outline-none transition-all font-bold text-sm md:text-base text-slate-700" />
+                        <div class="absolute left-4 md:left-5 top-1/2 -translate-y-1/2 text-slate-300">
+                          <i class="fa-solid fa-list-check"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
+                    <div class="space-y-2 md:space-y-3">
+                      <label class="text-[10px] md:text-xs font-black text-slate-400 uppercase tracking-widest ml-1">Fee Driver</label>
+                      <div class="relative">
+                        <input type="text" id="budget_barang" placeholder="Contoh: 50.000" class="w-full pl-12 md:pl-14 pr-4 md:pr-6 py-4 md:py-5 bg-slate-50 border-2 border-transparent rounded-2xl focus:bg-white focus:border-orange-500 outline-none transition-all font-bold text-sm md:text-base text-slate-700" />
+                        <div class="absolute left-4 md:left-5 top-1/2 -translate-y-1/2 text-orange-500 font-bold">Rp</div>
+                      </div>
+                    </div>
+
+                    <div class="space-y-2 md:space-y-3">
+                      <label class="text-[10px] md:text-xs font-black text-slate-400 uppercase tracking-widest ml-1">Driver Pilihan</label>
+                      <div class="relative">
+                        <select id="pilihan_driver" class="w-full px-5 md:px-6 py-4 md:py-5 bg-slate-50 border-2 border-transparent rounded-2xl focus:bg-white focus:border-[#FFD700] outline-none transition-all font-bold text-sm md:text-base text-slate-700 appearance-none cursor-pointer">
+                          <option value="" disabled selected>Pilih Driver</option>
+                          <option value="Adel">Adel (P)</option>
+                          <option value="Awan">Awan (L)</option>
+                          <option value="Adella">Adella (P)</option>
+                          <option value="Sholeh">Sholeh (L)</option>
+                          <option value="Cava">Cava (P)</option>
+                        </select>
+                        <i class="fa-solid fa-chevron-down absolute right-4 md:right-6 top-1/2 -translate-y-1/2 text-slate-300"></i>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="space-y-2 md:space-y-3">
+                    <label class="text-[10px] md:text-xs font-black text-slate-400 uppercase tracking-widest ml-1">Catatan</label>
+                    <textarea id="catatan_jastip" placeholder="Contoh: Cabainya dipisah..." rows="3" class="w-full px-5 md:px-6 py-4 md:py-5 bg-slate-50 border-2 border-transparent rounded-2xl focus:bg-white focus:border-orange-500 outline-none transition-all font-bold text-sm md:text-base text-slate-700 resize-none placeholder:text-slate-300"></textarea>
+                  </div>
+
+                  <button type="button" onclick="kirimPesanJastipWA()" class="group relative w-full overflow-hidden rounded-2xl bg-orange-600 p-px font-black text-white shadow-2xl shadow-orange-200 transition-all hover:scale-[1.01] active:scale-[0.98]">
+                    <div class="absolute inset-0 bg-gradient-to-r from-orange-400 to-yellow-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="relative flex items-center justify-center gap-3 bg-orange-600 px-6 md:px-8 py-4 md:py-6 rounded-2xl group-hover:bg-transparent transition-colors">
+                      <span class="text-sm md:text-lg tracking-tight uppercase">Kirim Jastip</span>
+                      <i class="fa-solid fa-paper-plane group-hover:translate-x-2 group-hover:-translate-y-1 transition-transform"></i>
+                    </div>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION RIWAYAT -->
+      <section id="riwayat" class="py-16 md:py-24 bg-[#F8FAFC] relative overflow-hidden">
+        <div class="absolute top-1/2 left-0 w-96 h-96 bg-[#FFD700]/5 rounded-full blur-3xl -translate-y-1/2 -translate-x-1/2"></div>
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-10 relative z-10">
+          <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 md:gap-8 mb-8 md:mb-12 reveal-top">
+            <div class="space-y-2 text-center md:text-left">
+              <h2 class="text-3xl md:text-4xl font-black text-slate-900 tracking-tight">
+                Riwayat <span class="text-[#FFD700]">Transaksi</span>
+              </h2>
+              <p class="text-gray-500 font-medium text-sm md:text-lg">Pantau semua aktivitas ordermu.</p>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row items-center gap-4 w-full md:w-auto">
+              <!-- Filter bisa di-scroll ngang ngiri kalau di HP -->
+              <div class="flex overflow-x-auto w-full md:w-auto bg-white p-1.5 rounded-2xl shadow-sm border border-slate-100 no-scrollbar whitespace-nowrap" id="tab-riwayat">
+                <button onclick="filterRiwayat('semua', this)" class="tab-btn px-6 py-2.5 bg-[#FFD700] text-black rounded-xl font-black text-xs md:text-sm shadow-md transition-all duration-300">Semua</button>
+                <button onclick="filterRiwayat('anjem', this)" class="tab-btn px-6 py-2.5 text-slate-400 hover:text-slate-900 rounded-xl font-bold text-xs md:text-sm transition-all duration-300">Anjem</button>
+                <button onclick="filterRiwayat('jastip', this)" class="tab-btn px-6 py-2.5 text-slate-400 hover:text-slate-900 rounded-xl font-bold text-xs md:text-sm transition-all duration-300">Jastip</button>
               </div>
 
-              <!-- Pilih Driver -->
-              <div class="space-y-3">
-                <label class="text-xs font-black text-slate-400 uppercase tracking-widest ml-1">Driver Pilihan</label>
-                <div class="relative">
-                  <select id="pilihan_driver" class="w-full px-6 py-5 bg-slate-50 border-2 border-transparent rounded-[1.5rem] focus:bg-white focus:border-[#FFD700] outline-none transition-all font-bold text-slate-700 appearance-none cursor-pointer">
-                    <option value="" disabled selected>Pilih Driver Favorit</option>
-                    <option value="Adel">Adel (Perempuan)</option>
-                    <option value="Awan">Awan (Laki-laki)</option>
-                    <option value="Adella">Adella (Perempuan)</option>
-                    <option value="Sholeh">Sholeh (Laki-laki)</option>
-                    <option value="Cava">Cava (Perempuan)</option>
-                  </select>
-                  <i class="fa-solid fa-chevron-down absolute right-6 top-1/2 -translate-y-1/2 text-slate-300"></i>
+              <div class="relative group w-full sm:w-auto">
+                <select class="w-full appearance-none pl-5 md:pl-6 pr-10 md:pr-12 py-3 md:py-4 bg-white border border-slate-100 rounded-2xl font-bold text-xs md:text-sm text-slate-700 outline-none focus:ring-4 focus:ring-[#FFD700]/10 transition-all cursor-pointer shadow-sm">
+                  <option>Terbaru</option>
+                  <option>Terlama</option>
+                </select>
+                <div class="absolute right-4 md:right-5 top-1/2 -translate-y-1/2 text-[#FFD700] pointer-events-none">
+                  <i class="fa-solid fa-sort-amount-down text-sm"></i>
                 </div>
               </div>
             </div>
+          </div>
 
-            <!-- Catatan -->
-            <div class="space-y-3">
-              <label class="text-xs font-black text-slate-400 uppercase tracking-widest ml-1">Detail Tambahan (Catatan)</label>
-              <textarea id="catatan_jastip" placeholder="Contoh: Cabainya dipisah, kerupuknya banyakan, atau jangan pake seledri..." rows="4" class="w-full px-6 py-5 bg-slate-50 border-2 border-transparent rounded-2xl focus:bg-white focus:border-orange-500 outline-none transition-all font-bold text-slate-700 resize-none placeholder:text-slate-300"></textarea>
+          <div class="relative min-h-[300px] md:min-h-[400px]">
+            <div id="loading-database" class="absolute inset-0 z-20 flex flex-col items-center justify-center bg-[#F8FAFC]/80 backdrop-blur-sm rounded-[2rem] md:rounded-[2.5rem]">
+              <div class="relative">
+                <div class="w-12 md:w-16 h-12 md:h-16 border-4 border-slate-100 rounded-full"></div>
+                <div class="w-12 md:w-16 h-12 md:h-16 border-4 border-[#FFD700] border-t-transparent rounded-full animate-spin absolute top-0 left-0"></div>
+              </div>
+              <p class="mt-4 md:mt-6 text-slate-900 font-black uppercase tracking-widest text-[10px] md:text-xs animate-pulse">Syncing...</p>
             </div>
 
-            <!-- Submit Button -->
-            <button type="button" onclick="kirimPesanJastipWA()" class="group relative w-full overflow-hidden rounded-2xl bg-orange-600 p-px font-black text-white shadow-2xl shadow-orange-200 transition-all hover:scale-[1.01] active:scale-[0.98]">
-              <div class="absolute inset-0 bg-gradient-to-r from-orange-400 to-yellow-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              <div class="relative flex items-center justify-center gap-3 bg-orange-600 px-8 py-6 rounded-2xl group-hover:bg-transparent transition-colors">
-                <span class="text-xl tracking-tight uppercase">Kirim Permintaan Jastip</span>
-                <i class="fa-solid fa-paper-plane group-hover:translate-x-2 group-hover:-translate-y-1 transition-transform"></i>
+            <div class="space-y-4 md:space-y-6 list-riwayat">
+              <div id="empty-state" class="hidden flex flex-col items-center justify-center py-16 md:py-24 bg-white rounded-[2rem] md:rounded-[3rem] border-2 border-dashed border-slate-100 shadow-inner px-6 text-center">
+                 <div class="w-20 md:w-24 h-20 md:h-24 bg-slate-50 rounded-full flex items-center justify-center mb-4 md:mb-6">
+                    <i class="fa-solid fa-box-open text-3xl md:text-4xl text-slate-200"></i>
+                 </div>
+                 <h3 class="text-xl md:text-2xl font-black text-slate-800">Belum Ada Catatan</h3>
+                 <p class="text-slate-400 font-medium mt-2 text-sm">Saatnya order pertama kamu!</p>
+                 <a href="#anjem" class="mt-6 md:mt-8 px-6 md:px-8 py-3 bg-slate-900 text-white rounded-xl font-bold text-xs md:text-sm hover:bg-[#FFD700] hover:text-black transition-all">Pesan Sekarang</a>
               </div>
+            </div>
+          </div>
+
+          <div class="mt-10 md:mt-16 text-center reveal-bottom delay-300">
+            <button onclick="bukaModalRiwayat()" class="group relative inline-flex items-center gap-3 md:gap-4 px-6 md:px-10 py-4 md:py-5 bg-slate-900 text-white rounded-2xl md:rounded-[1.5rem] font-black text-xs md:text-sm uppercase tracking-widest overflow-hidden transition-all shadow-2xl hover:scale-105 active:scale-95 w-full md:w-auto justify-center">
+              <div class="absolute inset-0 bg-gradient-to-r from-[#FFD700] to-yellow-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <span class="relative z-10 group-hover:text-black transition-colors">Lihat Semua Riwayat</span>
+              <i class="fa-solid fa-arrow-right-long relative z-10 text-[#FFD700] group-hover:text-black transition-all group-hover:translate-x-2"></i>
             </button>
-          </form>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- SECTION RIWAYAT PREMIUM -->
-<section id="riwayat" class="py-24 bg-[#F8FAFC] relative overflow-hidden">
-  <!-- Dekoratif Latar Belakang -->
-  <div class="absolute top-1/2 left-0 w-96 h-96 bg-[#FFD700]/5 rounded-full blur-3xl -translate-y-1/2 -translate-x-1/2"></div>
+      </section>
 
-  <div class="max-w-7xl mx-auto px-6 lg:px-10 relative z-10">
-    <!-- Header Riwayat -->
-    <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12 reveal-top">
-      <div class="space-y-2">
-        <h2 class="text-4xl font-black text-slate-900 tracking-tight">
-          Riwayat <span class="text-[#FFD700]">Transaksi</span>
-        </h2>
-        <p class="text-gray-500 font-medium text-lg">
-          Pantau semua aktivitas ordermu secara real-time.
-        </p>
-      </div>
-      
-      <!-- Filter & Sortir -->
-      <div class="flex flex-wrap items-center gap-4">
-        <!-- Tab Filter Mewah -->
-        <div class="flex bg-white p-1.5 rounded-2xl shadow-sm border border-slate-100" id="tab-riwayat">
-          <button onclick="filterRiwayat('semua', this)" class="tab-btn px-6 py-2.5 bg-[#FFD700] text-black rounded-xl font-black text-sm shadow-md transition-all duration-300">
-            Semua
-          </button>
-          <button onclick="filterRiwayat('anjem', this)" class="tab-btn px-6 py-2.5 text-slate-400 hover:text-slate-900 rounded-xl font-bold text-sm transition-all duration-300">
-            Anjem
-          </button>
-          <button onclick="filterRiwayat('jastip', this)" class="tab-btn px-6 py-2.5 text-slate-400 hover:text-slate-900 rounded-xl font-bold text-sm transition-all duration-300">
-            Jastip
-          </button>
-        </div>
+      <!-- MODAL RIWAYAT LENGKAP -->
+      <div id="modal-full-riwayat" class="fixed inset-0 z-[999] hidden flex items-end md:items-center justify-center p-0 md:p-4 lg:p-8">
+        <div class="absolute inset-0 bg-slate-900/80 backdrop-blur-md transition-opacity" onclick="tutupModalRiwayat()"></div>
+        
+        <!-- Dibikin nempel bawah kalau di HP, tengah kalau di laptop -->
+        <div class="relative bg-white w-full md:max-w-6xl h-[85vh] md:h-auto md:max-h-[90vh] rounded-t-[2rem] md:rounded-[3rem] shadow-[0_0_100px_rgba(0,0,0,0.5)] flex flex-col overflow-hidden reveal-scale">
+          
+          <div class="p-6 md:p-8 lg:p-10 border-b border-slate-100 flex justify-between items-center bg-white sticky top-0 z-20">
+            <div>
+              <h3 class="text-2xl md:text-3xl font-black text-slate-900 tracking-tight">Database Transaksi</h3>
+              <p class="text-slate-400 font-bold text-[10px] md:text-sm uppercase tracking-widest mt-1">Sistem Riwayat UNI-RIDE</p>
+            </div>
+            <button onclick="tutupModalRiwayat()" class="w-10 h-10 md:w-14 md:h-14 rounded-xl md:rounded-2xl bg-slate-50 flex items-center justify-center text-slate-400 hover:bg-red-50 hover:text-red-500 transition-all duration-300 shadow-sm">
+              <i class="fa-solid fa-xmark text-xl md:text-2xl"></i>
+            </button>
+          </div>
 
-        <!-- Dropdown Sortir -->
-        <div class="relative group">
-          <select class="appearance-none pl-6 pr-12 py-4 bg-white border border-slate-100 rounded-2xl font-bold text-sm text-slate-700 outline-none focus:ring-4 focus:ring-[#FFD700]/10 transition-all cursor-pointer shadow-sm">
-            <option>Urutkan: Terbaru</option>
-            <option>Urutkan: Terlama</option>
-          </select>
-          <div class="absolute right-5 top-1/2 -translate-y-1/2 text-[#FFD700] pointer-events-none">
-            <i class="fa-solid fa-sort-amount-down"></i>
+          <!-- overflow-x-auto biar tabel ga kepotong di HP -->
+          <div class="p-4 md:p-8 lg:p-10 overflow-y-auto overflow-x-auto flex-grow no-scrollbar w-full" id="container-tabel-riwayat">
+            <!-- Tabel bakal di-inject JS -->
+          </div>
+
+          <!-- Wrapper pagination -->
+          <div class="p-4 md:p-8 border-t border-slate-100 bg-slate-50 flex flex-col md:flex-row items-center justify-center md:justify-between gap-4 md:gap-6 overflow-x-auto" id="pagination-controls">
+            <!-- Tombol angka pagination -->
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- Container Utama List Riwayat -->
-    <div class="relative min-h-[400px]">
-      
-      <!-- Loading Spinner (Glassmorphism Style) -->
-      <div id="loading-database" class="absolute inset-0 z-20 flex flex-col items-center justify-center bg-[#F8FAFC]/80 backdrop-blur-sm rounded-[2.5rem]">
-        <div class="relative">
-          <div class="w-16 h-16 border-4 border-slate-100 rounded-full"></div>
-          <div class="w-16 h-16 border-4 border-[#FFD700] border-t-transparent rounded-full animate-spin absolute top-0 left-0"></div>
-        </div>
-        <p class="mt-6 text-slate-900 font-black uppercase tracking-widest text-xs animate-pulse">Synchronizing Data...</p>
-      </div>
-
-      <!-- List Riwayat Items -->
-      <div class="space-y-6 list-riwayat">
-        <!-- State Kosong (Empty State) -->
-        <div id="empty-state" class="hidden flex flex-col items-center justify-center py-24 bg-white rounded-[3rem] border-2 border-dashed border-slate-100 shadow-inner">
-           <div class="w-24 h-24 bg-slate-50 rounded-full flex items-center justify-center mb-6">
-              <i class="fa-solid fa-box-open text-4xl text-slate-200"></i>
-           </div>
-           <h3 class="text-2xl font-black text-slate-800">Belum Ada Catatan</h3>
-           <p class="text-slate-400 font-medium mt-2">Mungkin ini saat yang tepat untuk order pertama kamu!</p>
-           <a href="#home" class="mt-8 px-8 py-3 bg-slate-900 text-white rounded-xl font-bold text-sm hover:bg-[#FFD700] hover:text-black transition-all">Pesan Sekarang</a>
-        </div>
-        
-        <!-- Contoh Item Riwayat (Nanti di-inject JS) -->
-        <!-- 
-        <div class="group bg-white p-6 rounded-[2rem] border border-slate-50 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6 hover:shadow-xl hover:border-[#FFD700]/30 transition-all duration-500">
-           ... konten riwayat ...
-        </div>
-        -->
-      </div>
-    </div>
-
-    <!-- Tombol Lihat Semua (Trigger Modal) -->
-    <div class="mt-16 text-center reveal-bottom delay-300">
-      <button onclick="bukaModalRiwayat()" class="group relative inline-flex items-center gap-4 px-10 py-5 bg-slate-900 text-white rounded-[1.5rem] font-black text-sm uppercase tracking-widest overflow-hidden transition-all shadow-2xl hover:scale-105 active:scale-95">
-        <div class="absolute inset-0 bg-gradient-to-r from-[#FFD700] to-yellow-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-        <span class="relative z-10 group-hover:text-black transition-colors">Lihat Semua Riwayat</span>
-        <i class="fa-solid fa-arrow-right-long relative z-10 text-[#FFD700] group-hover:text-black transition-all group-hover:translate-x-2"></i>
-      </button>
-    </div>
-  </div>
-</section>
-
-<!-- MODAL RIWAYAT LENGKAP (FULL PAGINATION) -->
-<div id="modal-full-riwayat" class="fixed inset-0 z-[999] hidden flex items-center justify-center p-4 lg:p-8">
-  <!-- Backdrop -->
-  <div class="absolute inset-0 bg-slate-900/80 backdrop-blur-md transition-opacity"></div>
-  
-  <!-- Content -->
-  <div class="relative bg-white w-full max-w-6xl max-h-[90vh] rounded-[3rem] shadow-[0_0_100px_rgba(0,0,0,0.5)] flex flex-col overflow-hidden reveal-scale">
-    <!-- Modal Header -->
-    <div class="p-8 lg:p-10 border-b border-slate-100 flex justify-between items-center bg-white sticky top-0 z-20">
-      <div>
-        <h3 class="text-3xl font-black text-slate-900 tracking-tight">Database Transaksi</h3>
-        <p class="text-slate-400 font-bold text-sm uppercase tracking-widest mt-1">Sistem Riwayat UNI-RIDE</p>
-      </div>
-      <button onclick="tutupModalRiwayat()" class="w-14 h-14 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-400 hover:bg-red-50 hover:text-red-500 transition-all duration-300 shadow-sm">
-        <i class="fa-solid fa-xmark text-2xl"></i>
-      </button>
-    </div>
-
-    <!-- Modal Body (Table Container) -->
-    <div class="p-8 lg:p-10 overflow-y-auto flex-grow no-scrollbar" id="container-tabel-riwayat">
-      <!-- Tabel bakal di-inject via JS dengan style mewah -->
-    </div>
-
-    <!-- Modal Footer (Pagination Controls) -->
-    <div class="p-8 border-t border-slate-100 bg-slate-50 flex flex-col md:flex-row items-center justify-between gap-6" id="pagination-controls">
-      <!-- Info Halaman & Tombol Next/Prev bakal di-inject JS -->
-    </div>
-  </div>
-</div>
-
-<!-- FOOTER EXCLUSIVE -->
+    </main>
     <div id="footer"></div>
     <script src="navbar.js"></script>
     <script src="main.js"></script>
