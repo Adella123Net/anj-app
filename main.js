@@ -173,14 +173,11 @@ function bukaWAAnjem(data) {
     Sholeh: "6287861740238",
     Cava : "6285866670726"
   };
-  const pesan = `Halo kak ${data.driver}, ada orderan UNI-RIDE!\n\n📍 Jemput: ${data.jemput}\n🏁 Tujuan: ${data.tujuan}\n⏰ Waktu: ${data.waktuCakep}\n📝 Catatan: ${data.catatan}`;
+  const pesan = `Halo kak ${data.driver}, ada orderan ANJEM UNI-RIDE!\n\n📍 Jemput: ${data.jemput}\n🏁 Tujuan: ${data.tujuan}\n⏰ Waktu: ${data.waktuCakep}\n📝 Catatan: ${data.catatan}`;
   const phone = kontak[data.driver] || "628123456789";
   window.open(`https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(pesan)}`, "_blank");
 }
 
-// =========================================================
-// 6. FITUR JASTIP (JASA TITIP)
-// =========================================================
 async function kirimPesanJastipWA() {
   const elBarang = document.getElementById("nama_barang");
   const elToko = document.getElementById("toko_barang");
