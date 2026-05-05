@@ -348,3 +348,36 @@ function filterRiwayat(kat, btn) {
     item.style.display = kat === "semua" || item.dataset.kategori === kat ? "flex" : "none";
   });
 }
+
+function urutkanRiwayat(urutan) {
+  if (urutan === "terlama") {
+
+    ALL_DATA.sort((a, b) => {
+
+      let timeA = parseInt(a.id.split('-')[1]);
+      let timeB = parseInt(b.id.split('-')[1]);
+      return timeA - timeB; 
+    });
+  } else 
+    {
+    ALL_DATA.sort((a, b) => {
+      let timeA = parseInt(a.id.split('-')[1]);
+      let timeB = parseInt(b.id.split('-')[1]);
+      return timeB - timeA; 
+    });
+  }
+
+  renderRiwayatUtama();
+
+  const modal = document.getElementById("modal-full-riwayat");
+  if (modal && !modal.classList.contains("hidden")) {
+    renderPaginationTable(1);
+  }
+
+
+  const container = document.querySelector(".list-riwayat");
+  if (container) {
+    container.style.opacity = "0.5";
+    setTimeout(() => { container.style.opacity = "1"; }, 200);
+  }
+}
