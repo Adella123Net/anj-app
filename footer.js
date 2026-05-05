@@ -22,7 +22,7 @@ const foot = `<footer class="bg-slate-900 pt-20 pb-10 w-full">
           </div>
         </div>
         <div class="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between gap-6">
-          <p class="text-slate-500 font-bold text-xs uppercase tracking-widest">&copy; 2024 UNI-RIDE Indonesia. Crafted for Excellence.</p>
+          <p class="text-slate-500 font-bold text-xs uppercase tracking-widest">&copy; 2026 UNI-RIDE Indonesia. Crafted for Excellence.</p>
         </div>
       </div>
     </footer>`
